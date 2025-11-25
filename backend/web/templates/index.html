@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monitor de Uniformes</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Monitor de Uniformes</h1>
+        <div class="counters">
+            <div class="card green">
+                <h2>{{ com_uniforme }}</h2>
+                <p>Com uniforme</p>
+            </div>
+            <div class="card red">
+                <h2>{{ sem_uniforme }}</h2>
+                <p>Sem uniforme</p>
+            </div>
+        </div>
+        <ul>
+            {% for pessoa in pessoas %}
+            <li>Pessoa {{ pessoa.id }}: {% if pessoa.uniforme %}✔️{% else %}❌{% endif %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

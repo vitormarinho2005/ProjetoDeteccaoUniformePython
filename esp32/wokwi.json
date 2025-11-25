@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Vitor Marinho da Silva dos Santos",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -40, "left": 200, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz1", "top": 60, "left": 248, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp32:D5", "led1:A", "yellow", [] ],
+    [ "led1:C", "esp32:GND.1", "black", [ "h-51.8", "v147" ] ],
+    [ "esp32:D4", "buzz1:2", "green", [ "h90.7", "v43.2", "h93" ] ],
+    [ "buzz1:1", "esp32:GND.2", "black", [ "v76.8", "h-294.2", "v-71.8" ] ]
+  ],
+  "dependencies": {},
+  "sim": {
+    "wifi": {
+      "ssid": "Wokwi-GUEST",
+      "password": ""
+    },
+    "mqtt": {
+      "broker": "4d6e4976cb0b43778701600649659302.s1.eu.hivemq.cloud",
+      "port": 8883,
+      "ssl": true,
+      "username": "adminuser",
+      "password": "Admin123456",
+      "topics": [ "iot/uniforme/led", "iot/uniforme/buzzer" ]
+    },
+    "autorun": true
+  }
+}
